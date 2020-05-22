@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfApp2.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0">
+        <Grid HorizontalAlignment="Left" Width="150">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Style="{StaticResource HomeWinButton}" Click="Button_Click">Home</Button>
+            <Button Grid.Row="1" Style="{StaticResource HomeWinButton}" Click="Expense_Button_Click">Expenses</Button>
+            <Button Grid.Row="2" Style="{StaticResource HomeWinButton}">Income</Button>
+            <Button Grid.Row="3" Style="{StaticResource HomeWinButton}">Reports</Button>
+            <Button Grid.Row="4" Style="{StaticResource HomeWinButton}">Statistics</Button>
+        </Grid>
+</GroupBox>
+        <GroupBox Grid.Column="1" Grid.Row="0">
+        <chart:ClusteredBarChart ChartTitle="Hodaya" Height="300" Width="300">
+            <chart:ClusteredBarChart.Series>
+                <chart:ChartSeries Name="ChartSeries" SeriesTitle="HodayaSeries"
+                                   DisplayMember="NameCity"
+                                   ValueMember="CityId">
+                </chart:ChartSeries>
+            </chart:ClusteredBarChart.Series>
+        </chart:ClusteredBarChart>
+        </GroupBox>
+
+        <GroupBox Grid.Column="2">
+        <chart:DoughnutChart
+            ChartTitle="Expenses"
+            ChartSubTitle="Wins, Draws and Losses"
+            Height="300"
+            Width="300"
+            InnerRadiusRatio=".75">
+            <chart:DoughnutChart.Series>
+                <chart:ChartSeries
+                    Name="DoughnutChart"
+                    DisplayMember="Mounth"
+                    ValueMember="Sum"
+                    SeriesTitle="Overall"
+                ></chart:ChartSeries>
+            </chart:DoughnutChart.Series>
+        </chart:DoughnutChart>
+        </GroupBox>
+
+        <GroupBox Grid.Column="3">
+            <chart:ClusteredColumnChart ChartTitle="Hodaya" Height="300" Width="300">
+                <chart:ClusteredColumnChart.Series>
+                    <chart:ChartSeries Name="column" SeriesTitle="HodayaSeries"
+                                       DisplayMember="NameCity"
+                                       ValueMember="CityId">
+                    </chart:ChartSeries>
+                </chart:ClusteredColumnChart.Series>
+            </chart:ClusteredColumnChart>
+        </GroupBox>
+    </Grid>
+</Window>

@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp2.MainPersonal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainPersonal" Height="450" Width="800">
+    <DockPanel>
+
+
+        <Grid Margin="0,154,0,238" Width="201">
+            <!--<ListBox ItemsSource="{Binding}" DisplayMemberPath="name" SelectedValuePath="Id" 
+         x:Name="namesListBox" HorizontalAlignment="Left" Height="209" 
+         VerticalAlignment="Top" />-->
+            <ListBox x:Name="lstDishes" Height="32" VerticalAlignment="Bottom" 
+                 Margin="0,0,251,261" HorizontalAlignment="Right" Width="281" 
+                 ItemsSource="{Binding}" Background="#FFDDC9B0" BorderBrush="{x:Null}" 
+                 FontSize="15" MouseDoubleClick="lstDishes_MouseDoubleClick"/>
+
+            <!--<ComboBox Name="cmbColors">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Width="16" Height="16" Margin="0,2,5,2" />
+                            <TextBlock Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>-->
+            <ComboBox IsEditable="True">
+                <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
+                <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
+                <ComboBoxItem Selected="ComboBoxItem_Selected">ComboBox Item #3</ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        <Button Content="Add Revenue" Height="58" VerticalAlignment="Top" Width="76" Margin="0,331,0,0" Click="Add_Revenue">
+            <!--<Image Source="AddToCart."></Image>-->
+        </Button>
+        <Button Content="Add Expens" Width="76" Margin="0,331,0,30"/>
+    </DockPanel>
+</Window>

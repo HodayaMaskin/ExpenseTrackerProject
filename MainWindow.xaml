@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid RenderTransformOrigin="0.455,0.494">
+        <RadioButton x:Name="radioExit" GroupName="isUser" IsChecked="False" Content="user exit" HorizontalAlignment="Left" Margin="89,93,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked_Exist" />
+        <RadioButton x:Name="radioNew" GroupName="isUser" IsChecked="False" Content="new user" HorizontalAlignment="Left" Margin="410,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="personal ID" HorizontalAlignment="Left" Margin="43,130,0,0" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="personalIDTextBox" HorizontalAlignment="Left" Height="23" Margin="131,133,0,0" TextWrapping="Wrap" Text="input personal ID" VerticalAlignment="Top" Width="120" />
+        <Button Content="Connect" HorizontalAlignment="Left" Margin="89,193,0,0" VerticalAlignment="Top" Width="75" Click="connect_Click"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="401,350,0,0" VerticalAlignment="Top" Width="75" Click="add_Click"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="401,130,0,0" TextWrapping="Wrap" Text="enter first name" VerticalAlignment="Top" Width="120" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="401,157,0,0" TextWrapping="Wrap" Text="enter last name" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="401,222,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="401,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="401,199,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="lstStatus" Height="32" VerticalAlignment="Bottom" 
+                 Margin="0,0,271,104" HorizontalAlignment="Right" Width="120" 
+                 ItemsSource="{Binding}" Background="#FFDDC9B0" BorderBrush="{x:Null}" 
+                 FontSize="15" />
+        <ListBox x:Name="lstCities" Height="32" VerticalAlignment="Bottom" 
+                 Margin="0,0,271,141" HorizontalAlignment="Right" Width="120" 
+                 ItemsSource="{Binding}" Background="#FFDDC9B0" BorderBrush="{x:Null}" 
+                 FontSize="15" />
+        <Label Content="Label" HorizontalAlignment="Left" Margin="311,133,0,0" VerticalAlignment="Top" Width="73" Height="23"/>
+
+        <Button Content="Hodaya" HorizontalAlignment="Left" Margin="250,193,0,0" VerticalAlignment="Top" Width="75" Click="Hodaya_Click"/>
+
+    </Grid>
+</Window>
